@@ -39,7 +39,7 @@ def overdue():
         if num <= 14:
             result = (14 - num)
         print (f"you have {result} days left of this item")
-       # else: 
+        else: 
         return ("your item is overdue please return or renew the item")
         
             
@@ -53,11 +53,19 @@ def checkfines():
 
     #for items in services_available:
 def services_available():
-        
+ servicelist = {
+        "scanning": "free",
+    "printing": "costs per page",
+    "borrowing": "free",
+    "study room": "bookable",
+    "computers": "bookable",
+    "librarian": "bookable",
+    "local history": "free",
+}
  service = input("Hi there what service are you looking for?")
         
  if service in servicelist:
-        print (f"We have this {key} service and it is {value}")
+        print (f"We have this {[service]} service and it is {servicelist[service]}")
  if service not in servicelist:
         print (" Apologise we do not have that service. Would you like to search for more?")
     # if service in servicelist
