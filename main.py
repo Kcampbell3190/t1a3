@@ -1,7 +1,10 @@
 #landing feature that will ask user what they wish to do within the app - Add a new meber, check for fines, check overdues, and check for available services.
+import datetime  
 
 features = ("create_new_member", "fine_check", "overdues", "check_for_available_services")
 
+class RangeError(Exception):
+    pass
 
 servicelist = {
         "scanning": "free",
@@ -16,31 +19,30 @@ servicelist = {
  #Functions####################################################################
  
 def create_new_member(): 
-       #call class method
         name = input("Please enter the name of the new member: ")
         if name.isnumeric():
             print ("Invalid input: Please enter the name of the new member")
             name = input("Please enter the name of the new member: ")
         else:
-          date_of_birth = input("Please enter the date of birth of the new member in the format DD MM YYYY")
-          if date_of_birth.isstring():
-            print("Invalid input: Please enter the DOB as a number")
-            date_of_birth = input("Please enter the DOB of the new member")
-          pass
-          name = self.self
-          name - name.self
-          date_of_birth = self.date_of_birth
+            day = int(input("Please enter the day of birth of the new member: ")) #rework to readable
+            month = int(input("please enter the month of birth of the new member: "))
+            year = int(input("Please enter the year of birth of the new member: "))
+            birthday = datetime.date(year, month, day) 
+        print("All done!")
+        new_members.append(LibraryMember(name, birthday))
+
+       
      
 
 def overdue():
-        num = int(input("how many days have you had the item? please enter a number between 1 and 14"))
-        if num.isstring():
-            print("Invalid input: Please enter a number between 1 and 14 as an integer")
+        num = int(input("how many days have you had the item? please enter a number between 1 and 14: "))
+      # if not num.isstring():
+        #    print("Invalid input: Please enter a number between 1 and 14 as an integer")
         if num <= 14:
             result = (14 - num)
-        print (f"you have {result} days left of this item")
+            print (f"you have {result} days left of this item")
         else: 
-        return ("your item is overdue please return or renew the item")
+            print ("your item is overdue please return or renew the item")
         
             
        
@@ -62,10 +64,10 @@ def services_available():
     "librarian": "bookable",
     "local history": "free",
 }
- service = input("Hi there what service are you looking for?")
+ service = input("Hi there what service are you looking for?: ")
         
  if service in servicelist:
-        print (f"We have this {[service]} service and it is {servicelist[service]}")
+        print (f"We have this {service} service and it is {servicelist[service]}")
  if service not in servicelist:
         print (" Apologise we do not have that service. Would you like to search for more?")
     # if service in servicelist
@@ -78,10 +80,10 @@ def services_available():
             
 class LibraryMember():
     # def __init__(self, name, date_of_birth, fines,):
-    def __init__(self, name, date_of_birth):
+    def __init__(self, name, birthday):
         self.self = self
         self.name = name
-        self.date_of_birth = date_of_birth #into a date type
+        self.birthday = birthday #into a date type
         # self.fines = fines
         self.fines = 0
     def check_fines():
@@ -111,8 +113,13 @@ def landing():
         print("3) Check overdues")
         print("4) Check for available services")
         print("5) Exit:")
+        ValueError("Please enter a number from 1 to 5")
         # choice = input("Please select a number from the menu: ")
         # choice = choice.strip()
+        choice = int(input('Enter an integer: '))
+        if not choice in range(1, 6):
+         raise IndexError(f'{choice} is out of range - must be between 1 and 6')
+        return choice
 
 # while choice != '5':
 
@@ -161,6 +168,9 @@ def landing():
 # --------
 landing()
 choice = int(input("Please select a number from the menu: "))
+#if not choice in range(1, 6):
+  #       raise RangeError(f'{choice} is out of range - must be between 1 and 6')
+   #  return choice
 #choice = choice.strip()
 # choice = int(input("Enter your choice"))
 
