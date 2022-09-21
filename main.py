@@ -72,7 +72,7 @@ def services_available():
         print (" Apologise we do not have that service. Would you like to search for more?")
     # if service in servicelist
        # print (f"We have this {key} service and it is {value}")
- if input == "finished":
+if input == "finished":
       print("Thank you please come again")
 
             #############################################################################################################
@@ -86,8 +86,8 @@ class LibraryMember():
         self.birthday = birthday #into a date type
         # self.fines = fines
         self.fines = 0
-    def check_fines():
-        print(f"you have a fine of ${self.fines}")
+    #def check_fines():
+       # print(f"you have a fine of ${self.fines}")
  
         
 
@@ -99,7 +99,7 @@ class LibraryMember():
 #kane = LibraryMember1("Kane", 26_3_1993, 10 )
 
 new_members = [
-     #kane,
+    
      LibraryMember("Chantal", "11 7 1994"),
      LibraryMember("Jack", 22_11_2003), #decide on DOB format
 ]
@@ -107,19 +107,19 @@ new_members = [
 # landing feature that will ask user what they wish to do within the app - Add a new meber, check for fines, check overdues, and check for available services.
 
 def landing():
-   # while True:
+     try:
         print("1) Create a new member")
         print("2) Check for fines")
         print("3) Check overdues")
         print("4) Check for available services")
-        print("5) Exit:")
-        ValueError("Please enter a number from 1 to 5")
-        # choice = input("Please select a number from the menu: ")
-        # choice = choice.strip()
-        choice = int(input('Enter an integer: '))
-        if not choice in range(1, 6):
-         raise IndexError(f'{choice} is out of range - must be between 1 and 6')
-        return choice
+        print("5) Exit: ")
+      #  choice = int(input("Please select a number from the menu: "))
+     except ValueError:
+        print("choice must be a number from 1 -5")
+      
+
+           
+
 
 # while choice != '5':
 
