@@ -33,8 +33,6 @@ def overdue():
             
        
 
-def checkfines():
-    pass
 
 
 
@@ -83,24 +81,26 @@ new_members = [
 def landing():
     try:
         print("1) Create a new member")
-        print("2) Check for fines")
-        print("3) Check overdues")
-        print("4) Check for available services")
-        print("5) Exit: ")
+        print("2) Check overdues")
+        print("3) Check for available services")
+        print("4) Exit ")
         choice = input("Please enter a number from the menu:")
-        if choice in range (1,6):
-     except ValueError:
-        print("choice must be a number from 1 -5")
+        if choice not in range (1,4):
+            print("please enter a number between 1 and 4")
+    except:
+        return landing()
+     
 
 
 #landing feature that will ask user what they wish to do within the app - Add a new meber, check for fines, check overdues, and check for available services.
-# --------
+# -------
 landing()
 choice = int(input("Please select a number from the menu: "))
 
 
 
 # feature 1 Library worker inputs information here for new members to the library  
+# 
 if choice == 1:
     create_new_member()
 
@@ -109,30 +109,23 @@ if choice == 1:
 
 
 
-# Feature 2 allows users to check for library fines
-# How will we be able to check for other members
-
-if (choice == 2):
-    print("working")
-    checkfines() 
-
 
 
 # Feature 3 allows users to check how many days they have left until renewal or return
-if (choice == 3):
+if (choice == 2):
     overdue()
     
 
 
 
 #Feature 4 this allows users to check what services are available and if they are free, bookable or cost
-if (choice == 4):
+if (choice == 3):
     services_available()
 
 
 
 
 
-if choice == 5:
+if choice == 4:
     print("Thank you please come again")
     quit()
