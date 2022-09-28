@@ -84,25 +84,36 @@ def landing():
         print("2) Check overdues")
         print("3) Check for available services")
         print("4) Exit ")
-        choice = input("Please enter a number from the menu:")
-        if choice not in range (1,4):
+        choice = int(input("Please enter a number from the menu:"))
+        if choice == 1:
+         create_new_member()
+        if choice == 2:
+         overdue()
+        if choice == 3:
+         services_available()
+        if choice == 4:
+         print("Thank you please come again")
+         quit()
+
+        if choice not in range (1,5):
             print("please enter a number between 1 and 4")
+            raise ValueError 
     except:
-        return landing()
+            return landing()
      
 
 
 #landing feature that will ask user what they wish to do within the app - Add a new meber, check for fines, check overdues, and check for available services.
 # -------
 landing()
-choice = int(input("Please select a number from the menu: "))
+#choice = int(input("Please select a number from the menu: "))
 
 
 
 # feature 1 Library worker inputs information here for new members to the library  
 # 
-if choice == 1:
-    create_new_member()
+#if choice == 1:
+  #   create_new_member()
 
 
 
@@ -112,20 +123,20 @@ if choice == 1:
 
 
 # Feature 3 allows users to check how many days they have left until renewal or return
-if (choice == 2):
-    overdue()
+#if (choice == 2):
+  #  overdue()
     
 
 
 
 #Feature 4 this allows users to check what services are available and if they are free, bookable or cost
-if (choice == 3):
-    services_available()
+#if (choice == 3):
+ #   services_available()
 
 
 
 
 
-if choice == 4:
-    print("Thank you please come again")
-    quit()
+#if choice == 4:
+ #   print("Thank you please come again")
+ #   quit()
