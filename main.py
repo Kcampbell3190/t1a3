@@ -61,7 +61,6 @@ if input == "finished":
              
             
 class LibraryMember():
-    # def __init__(self, name, date_of_birth, fines,):
     def __init__(self, name, birthday):
         self.self = self
         self.name = name
@@ -73,7 +72,7 @@ class LibraryMember():
 new_members = [
     
      LibraryMember("Chantal", "11 7 1994"),
-     LibraryMember("Jack", 22_11_2003), #decide on DOB format
+     LibraryMember("Jack", "22 11 2003"), 
 ]
 
 # landing feature that will ask user what they wish to do within the app - Add a new meber, check for fines, check overdues, and check for available services.
@@ -100,43 +99,5 @@ def landing():
             raise ValueError 
     except:
             return landing()
-     
 
-
-#landing feature that will ask user what they wish to do within the app - Add a new meber, check for fines, check overdues, and check for available services.
-# -------
 landing()
-#choice = int(input("Please select a number from the menu: "))
-
-
-
-# feature 1 Library worker inputs information here for new members to the library  
-# 
-#if choice == 1:
-  #   create_new_member()
-
-
-
-
-
-
-
-
-# Feature 3 allows users to check how many days they have left until renewal or return
-#if (choice == 2):
-  #  overdue()
-    
-
-
-
-#Feature 4 this allows users to check what services are available and if they are free, bookable or cost
-#if (choice == 3):
- #   services_available()
-
-
-
-
-
-#if choice == 4:
- #   print("Thank you please come again")
- #   quit()

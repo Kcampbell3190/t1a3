@@ -2,8 +2,9 @@
 
 Github Link: https://github.com/Kcampbell3190/t1a3
 
-Youtube Link: https://youtu.be/EyKbSRjmsQM
+Youtube Link: https://www.youtube.com/watch?v=9yaeg-sWHL8&ab_channel=KaneCampbell
 
+Project Management link: https://trello.com/b/l32oUiwY/t1a3
 
 
 
@@ -13,11 +14,11 @@ To install this terminal application you will need to:
 1. Open teminal 
 2. go to https://github.com/Kcampbell3190/t1a3
 3. run the github code in the terminal to get the code in vscode. 
-4. once the code has successfully been installed you simply hit run and the application will give you instructions on how to use the applicaiton itself. 
+4. once the code has successfully been installed you simply hit run and the application will give you instructions on how to use the applicaiton itself.
 
 
 
-#Instructions: 
+#Instructions:
 
 The application will open with a menu so that the library staff member can decide which of the features they wish to use. 
 To initiate the feature the staff member will need to input the string that matches the feature. 
@@ -47,3 +48,20 @@ The hardware requirements will be a computer that has the ability to have termin
 - how to use any command line arguments made for the application
 
 The application takes very few command line arguments and this makes it easy to use. Most of the time you will be prompted to input a number or word. The application will take this input and convert it to the correct data type. If you need to exit the program enter "5" at the landing menu and this will exit the application. 
+
+
+
+Testing: The testing of this code is done via a try and except statement. The purpose is to ensure that the menu and application themselves are working. 
+
+Test 1: 
+
+- The first test did not work and this was due to the fact that a raise value error was not implented into the code. 
+- The was a constant user error where multiple "please enter a number" commands were printed to the terminal. 
+- Update required fixing the try and except code and moving the "if functions" into the larger landing function. 
+
+
+Test 2: 
+
+- After changing the try and except block code to include a raise value error, the landing fucntion seemed to work smoothly. 
+- Adding the "if choice fucntions" into the larger landing function has actually made the code drier and also eliminated muliple "please enter number:" messages. 
+- The test ran smoothly and seems to work now. 
